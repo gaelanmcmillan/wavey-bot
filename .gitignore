@@ -1,3 +1,5 @@
 .env
 .DS_Store
 wavey-bot
+*/__pycache__
+src/cogs/__pycache__

@@ -34,7 +34,11 @@ def func_list(t, f_list):
         val += func(t, f)
     return val
 def Split(l, n):
+    l = list(l)
+    while len(l) % n != 0:
+        l.pop()
     x = list(np.split(np.array(l), n))
+    
     return [list(v) for v in x]
 
 def SimultaneusAudio(t_list, frequency_list):
@@ -87,9 +91,9 @@ def SaveAudioAsWav(file_name, audio, sampling_rate):
     sf.write(file_name, audio, sampling_rate, 'PCM_24')
 
 #initial conditions:
-n = 60
+n = 2*2*3*5*7*11*13*17*23*29*123*200
 scale_v = 50
-audio_length = 1 #s
+audio_length = 5 #s
 sampling_rate = 44100
 
 

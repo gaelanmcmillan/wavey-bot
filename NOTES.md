@@ -1,2 +1,3 @@
 - set up a virtual environment with `virtualenv wavey-bot` in terminal
 - installed nextcord in the environment with `python3 -m pip install -U "nextcord[voice]"` in terminal
+- to update requirements.txt, use the terminal command `pip freeze > requirements.txt`

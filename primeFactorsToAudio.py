@@ -104,6 +104,6 @@ note = NonSimultaneusAudio(GetTimeList(audio_length, sampling_rate), GetFrequenc
 
 audio = PlayAudio(note, sampling_rate)
 
-SaveAudioAsWav("test.wav", audio, sampling_rate)
+#SaveAudioAsWav("audio.wav", audio, sampling_rate)
 
 

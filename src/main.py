@@ -17,15 +17,24 @@ PUBLIC_KEY = os.getenv("PUBLIC_KEY")
 intents = nextcord.Intents.default()
 intents.members = True
 
-bot = commands.Bot(command_prefix="!")
+client = commands.Bot(command_prefix="!")
 
-@bot.event
+# ┌──────────────────┐
+# │ Start-up Routine │
+# └──────────────────┘
+
+@client.event
 async def on_ready():
     print(f"Logged in as {bot.user.name}")
 
-@bot.command(name="ping")
+
+# ┌──────────────┐
+# │ Bot Commands │
+# └──────────────┘
+
+@client.command(name="ping")
 async def SendMessage(ctx):
     await ctx.send("pong")
 
 if __name__ == "__main__":
-    bot.run(TOKEN)
+    client.run(TOKEN)

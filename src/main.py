@@ -25,7 +25,7 @@ client = commands.Bot(command_prefix="!")
 
 @client.event
 async def on_ready():
-    print(f"Logged in as {bot.user.name}")
+    print(f"Logged in as {client.user.name}") #TODO: formalize a logging solution instead of printing to standard out
 
 
 # ┌──────────────┐
@@ -35,6 +35,10 @@ async def on_ready():
 @client.command(name="ping")
 async def SendMessage(ctx):
     await ctx.send("pong")
+
+@client.command(pass_context=True)
+async def join(ctx):
+    if (ctx.author.voice)
 
 if __name__ == "__main__":
     client.run(TOKEN)

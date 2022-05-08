@@ -1,14 +1,10 @@
 import os
-import asyncio
 from random import randint
-from discord import Interaction
 
 from dotenv import load_dotenv
 
 import nextcord
 from nextcord.ext import commands
-
-import cogs.testcog
 
 from primeFactorsToAudio import generate_wav_from_primes 
 
@@ -19,6 +15,8 @@ CLIENT_ID = os.getenv("CLIENT_ID")
 TS_GUILD_ID = os.getenv("TS_GUILD_ID")
 PUBLIC_KEY = os.getenv("PUBLIC_KEY")
 CHORDS_DIR = os.getenv("CHORDS_DIR")
+PRIMES_DIR = os.getenv("PRIMES_DIR")
+TTS_DIR = os.getenv("TTS_DIR")
 
 intents = nextcord.Intents.default()
 intents.members = True
@@ -32,8 +30,6 @@ client = commands.Bot(command_prefix="!")
 @client.event
 async def on_ready():
     print(f"Logged in as {client.user.name}") #TODO: formalize a logging solution instead of printing to standard out
-
-
 
 # ┌──────────────────┐
 # │ Helper Functions │
@@ -66,8 +62,6 @@ async def join(ctx):
     if (ctx.author.voice):
         channel = ctx.message.author.voice.channel
         active_voice_client = await channel.connect()
-        # source = nextcord.FFmpegPCMAudio('test.wav')
-        # player = active_voice_client.play(source)
     else:
         await ctx.send("You must be in a voice channel to run this command.")
 
@@ -78,7 +72,6 @@ async def leave(ctx):
         await ctx.send("I left the voice channel")
     else:
         await ctx.send("I'm not in a voice channel")
-
 
 # ┌────────────────────────────────────────────┐
 # │ Strats Prime Factorization Sound Generator │
@@ -96,10 +89,11 @@ async def play_primes(ctx, input_string: str=None):
     await ctx.send(f"Let's hear '{input_string}'")
     
     wav_path: str = await generate_wav_from_primes(input_string)
+
     if wav_path:
         await play_audio_file(wav_path, ctx)
     else:
-        await ctx.send("could not generate a wav file from {input_string}")
+        await ctx.send(f"Could not generate a .WAV file from '{input_string}'.")
 
 # ┌──────────────┐
 # │ Random Chord │
@@ -202,6 +196,36 @@ async def play_guess_chord(ctx):
     await ctx.send("***Guess the Chord***", view=view)
     result = await view.wait()
     print("Results: ", result)
+
+# ┌────────────────┐
+# │ Text to Speech │
+# └────────────────┘
+
+from gtts import gTTS
+
+@client.command(name="speak")
+async def speak_tts(ctx, user_text: str=""):
+    # put the text to speach audio in tts folder
+    if len(user_text) > 140:
+        await ctx.send("I can only read messages that are up to 140 characters long!")
+        return
+
+    user_text = user_text.lower()
+    user_text.replace("/","")
+    if not user_text:
+        user_text = "speak what?"
+    underscored = user_text.replace(" ", "_") + ".wav"
+    file_path = os.path.join(TTS_DIR, underscored)
+
+    for f in os.listdir(TTS_DIR):
+        print(f)
+    if not underscored in os.listdir(TTS_DIR):
+        print(f"Generating tts: {underscored}")
+        audio_obj = gTTS(user_text, lang="en", tld="co.uk")
+        audio_obj.save(file_path)
+
+    await play_audio_file(file_path, ctx)
+
 
 if __name__ == "__main__":
     client.run(TOKEN)

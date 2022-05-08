@@ -6,8 +6,7 @@ import soundfile as sf
 import math
 from datetime import datetime
 
-import asyncio
-
+import os
 
 
 async def generate_wav_from_primes(input_str):
@@ -219,7 +218,7 @@ async def generate_wav_from_primes(input_str):
     addon = str(now)[-3:]
     date_time = now.strftime("%d-%m-%Y-%H-%M-%S") + "-" + addon
 
-    file_name = "PrimeFactorizationFile" + date_time + ".wav"
+    file_name = os.path.join("primes", "PrimeFactorizationFile" + date_time + ".wav")
     SaveAudioAsWav(file_name, note, sampling_rate)
     print(f"generated file as {file_name}")
     return file_name

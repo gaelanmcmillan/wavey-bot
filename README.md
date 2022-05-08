@@ -46,7 +46,7 @@ A underlying beat is also generated whose frequency corresponds to the number of
 #### Commands
 + `join` - Make Wavey join your current voice channel.
 + `leave` - Make Wavey leave your current voice channel.
-+ `play_prime <optional: input_string>` - Synthesize audio from the input string (if none is provided, your username is used). Audio automatically plays in the current voice channel.
++ `play_primes <optional: input_string>` - Synthesize audio from the input string (if none is provided, your username is used). Audio automatically plays in the current voice channel.
 + `chord` - Play a random chord in the current voice channel.
 
 ### References

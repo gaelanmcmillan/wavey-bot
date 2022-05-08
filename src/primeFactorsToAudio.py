@@ -194,14 +194,10 @@ async def generate_wav_from_primes(input_str):
 
 
 
-    if type(input_str) == int:
-        n = input_str
-    
-    elif type(input_str) == str:
-        n = TextToNum1(input_str)
-
-    else:
-        return "Wrror wrong type of input"
+    try:
+        n = int(input_str)
+    except:
+        n = TextToNum1(input_str) 
 
     #initial conditions:
 

@@ -162,7 +162,7 @@ async def play_guess_chord(ctx):
     play_button.callback = play_chord_callback
     view.add_item(play_button)
 
-    option_count = 6
+    option_count = 4
     guess_options = list(map(prettify_chord_name, generate_guess_options(chord_path[7:], CHORDS_DIR, option_count)))
     print(f"Guess the Chord | Answer: {chord_name}, Options: {guess_options}")
 

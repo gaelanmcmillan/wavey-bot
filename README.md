@@ -1,11 +1,25 @@
-<img src="wavey.png" width="150"/>
+<img src="imgs/wavey.png" width="300"/>
 
 # Wavey
 A discord bot specializing in interactive audio experiences! <br>
 
-<img style="float: left" img src="owell.png" width="140"/> <br>
+<img style="float: left" img src="imgs/owell.png" width="140"/> <br>
 As of the current version, "interactive audio experiences" <br> are mostly limited to generating and playing .WAV files. <br> 
 That's OK, Wavey. We're still proud of you.
+
+***
+## Features
+### Ear Training
+Train your ears on 19 types of chords in 4 different keys —— that's right, 76 .WAV files, ripe for the picking! <br>
+<img src="imgs/eartraining.png" width="200"/> 
+
+#### Examples
+<br>
+<img src="imgs/newgame.png" width="600"> <br>
+<img src="imgs/success.png" width="600"> <br>
+<img src="imgs/failure.png" width="600"> <br>
+
+
 
 ***
 

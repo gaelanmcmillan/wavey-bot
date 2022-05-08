@@ -1,13 +1,19 @@
 <img src="wavey.png" width="150"/>
 
 # Wavey
-A discord bot specializing in interactive audio experiences!
-(As of the current version, Wavey only really specializes in playing local .WAV files. That's OK, Wavey. We're still proud of you)
+A discord bot specializing in interactive audio experiences! <br>
 
+<img style="float: left" img src="owell.png" width="140"/> <br>
+As of the current version, "interactive audio experiences" <br> are mostly limited to generating and playing .WAV files. <br> 
+That's OK, Wavey. We're still proud of you.
+
+***
 
 ### Installation
 
 [FFmpeg](https://ffmpeg.org/) is required for Wavey to stream audio in discord voice channels. Head on over to the [FFmpeg download page](https://ffmpeg.org/download.html) and select the installation for your operating system, or use a command line utility of your choice. [FFmpeg is on homebrew](https://formulae.brew.sh/formula/ffmpeg), [chocolatey](https://community.chocolatey.org/packages/ffmpeg) and [Linux package managers](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu).
+
+***
 
 ### Documentation
 

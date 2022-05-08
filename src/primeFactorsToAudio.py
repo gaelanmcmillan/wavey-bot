@@ -211,14 +211,14 @@ async def generate_wav_from_primes(input_str):
 
     note = GenerateAudio(GetTimeList(audio_length, sampling_rate), GetFrequencyList(n, scale_v, primefactors))
 
-    audio = PlayAudio(note, sampling_rate)
+    #audio = PlayAudio(note, sampling_rate)
 
     now = datetime.now()
     addon = str(now)[-3:]
     date_time = now.strftime("%d-%m-%Y-%H-%M-%S") + "-" + addon
 
     file_name = "PrimeFactorizationFile" + date_time + ".wav"
-    SaveAudioAsWav(file_name, audio, sampling_rate)
+    SaveAudioAsWav(file_name, note, sampling_rate)
     print(f"generated file as {file_name}")
     return file_name
 

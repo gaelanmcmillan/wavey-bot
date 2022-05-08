@@ -179,9 +179,11 @@ async def generate_wav_from_primes(input_str):
 
     def TextToNum1(str):
         num = 0
+        i = 1
         for c in str:
             #print(c, ord(c))
-            num += ord(c)
+            num += ord(c) * i
+            i += 1
         #print(num)
         return num
 

@@ -9,7 +9,7 @@ from datetime import datetime
 
 
 
-def MainPrimeFactors(input_str):
+def generate_wav_from_primes(input_str):
 
     def primefactors(n):
         p_l = []

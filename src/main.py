@@ -40,7 +40,9 @@ async def internal_function(ctx):
 async def join(ctx):
     if (ctx.author.voice):
         channel = ctx.message.author.voice.channel
-        await channel.connect()
+        voice = await channel.connect()
+        source = nextcord.FFmpegPCMAudio('test.wav')
+        player = voice.play(source)
     else:
         await ctx.send("You must be in a voice channel to run this command.")
 

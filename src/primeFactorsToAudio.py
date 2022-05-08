@@ -13,6 +13,8 @@ import asyncio
 async def generate_wav_from_primes(input_str):
 
     def primefactors(n):
+        if n < 2:
+            return []
         p_l = []
         #even number divisible
         while n % 2 == 0:
@@ -196,8 +198,12 @@ async def generate_wav_from_primes(input_str):
 
     try:
         n = int(input_str)
+
     except:
-        n = TextToNum1(input_str) 
+        n = TextToNum1(input_str)
+    if n < 2:
+        return ""
+
 
     #initial conditions:
 

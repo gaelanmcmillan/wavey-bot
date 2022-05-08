@@ -19,6 +19,14 @@ Train your ears on 19 types of chords in 4 different keys —— that's right, 7
 <img src="imgs/success.png" width="600"> <br>
 <img src="imgs/failure.png" width="600"> <br>
 
+### Play Primes
+
+Generate a unique sound based on a positive integer or a string. The generated sound is unique and based on the prime factorization of the integer directly or a map from the string to an integer. 
+
+#### Examples
+<br>
+<img src="imgs/playPrimes1.png" width="600"> <br>
+<img src="imgs/playPrimes2.png" width="600"> <br>
 
 
 ***

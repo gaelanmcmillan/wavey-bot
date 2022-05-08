@@ -33,7 +33,7 @@ async def on_ready():
 # └──────────────┘
 
 @client.command(name="ping")
-async def SendMessage(ctx):
+async def internal_function(ctx):
     await ctx.send("pong")
 
 @client.command(pass_context=True)

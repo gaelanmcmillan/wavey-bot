@@ -25,8 +25,12 @@ Generate a unique sound based on a positive integer or a string. The generated s
 
 #### Examples
 <br>
-<img src="imgs/playPrimes1.png" width="600"> <br>
-<img src="imgs/playPrimes2.png" width="600"> <br>
+<img src="imgs/playPrimes1.jpg" width="600"> <br>
+<img src="imgs/playPrimes2.jpg" width="600"> <br>
+
+A underlying beat is also generated whose frequency corresponds to the number of primes in the prime factorization. The beat function looks like this: 
+
+<img src="imgs/playPrimes3.jpg" width="600"> <br>
 
 
 ***

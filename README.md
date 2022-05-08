@@ -21,7 +21,7 @@ Train your ears on 19 types of chords in 4 different keys —— that's right, 7
 
 ### Play Primes
 
-Generate a unique sound based on a positive integer or a string. The generated sound is unique and based on the prime factorization of the integer directly or a map from the string to an integer. 
+Generate a sound based on a positive integer or a string. The generated sound is unique for every number and every string as it is based on the prime factorization of the integer or a map from the string to an integer. 
 
 #### Examples
 <br>

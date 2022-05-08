@@ -1,5 +1,9 @@
+![alt text](wavey.png "Wavey")
+
 # Wavey
 A discord bot specializing in interactive audio experiences!
+(As of the current version, Wavey only really specializes in playing local .WAV files. That's OK, Wavey, we're still proud of you)
+
 
 ### Installation
 

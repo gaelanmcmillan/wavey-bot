@@ -1,4 +1,4 @@
-![alt text](wavey.png "Wavey")
+<img src="wavey.png" width="150"/>
 
 # Wavey
 A discord bot specializing in interactive audio experiences!

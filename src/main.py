@@ -7,6 +7,8 @@ from nextcord.ext import commands
 
 import cogs.testcog
 
+from primeFactorsToAudio import generate_wav_from_primes 
+
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
@@ -53,6 +55,23 @@ async def leave(ctx):
         await ctx.send("I left the voice channel")
     else:
         await ctx.send("I'm not in a voice channel")
+        
+@client.command(pass_context=True)
+async def play_prime_factorization(ctx, input_string):
+    if (ctx.author.voice):
+        channel = ctx.message.author.voice.channel
+        await channel.connect()
+        
+        wav_path: str = await generate_wav_from_primes(input_string)
+        if wav_path:
+            source = FFmpegPCMAudio(wav_path)
+            player = voice.play(source)
+        else:
+            await ctx.send("could not generate a wav file")
+          
+          
+    else:
+        await ctx.send("You must be in a voice channel to run this command.")
 
 if __name__ == "__main__":
     client.run(TOKEN)

@@ -43,8 +43,12 @@ async def generate_wav_from_primes(input_str):
 
     def func(t, f):
         volume = 1
-        if f >= 19*30.868:
+        if f >= 19*30.868 and f < 40*30.868:
             volume = 0.2
+        if f >= 40*30.868 and f < 100*30.868:
+            volume = 0.08
+        if f >= 100*30.868:
+            volume = 0.02
         return np.sin(t * f* 2 * np.pi) * volume
 
     def func_list(t, f_list):

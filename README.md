@@ -13,6 +13,10 @@ That's OK, Wavey. We're still proud of you.
 Train your ears on 19 types of chords in 4 different keys —— that's right, 76 .WAV files, ripe for the picking! <br>
 <img src="imgs/eartraining.png" width="200"/> 
 
+
+https://user-images.githubusercontent.com/73502924/167455503-a6fc2faa-c5d4-465e-aa36-5aa34982f434.mp4
+
+
 #### Examples
 <br>
 <img src="imgs/newgame.png" width="600"> <br>
